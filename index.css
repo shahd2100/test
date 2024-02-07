@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+:root {
+  --background-light: #f3f3f3;
+  --background-dark: #45474b;
+  --transition: 0.5s;
+  --secound-color: #0766ad;
+  --font-size: 16px;
+}
+.nav-bar {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  z-index: 100;
+  background-color: var(--background-light);
+  padding: 1rem;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+/* .logo {
+  width: 40%;
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  width: 400px;
+} */
+
+.links {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  margin-left: 400px;
+}
+
+.links ul {
+  list-style: none;
+  display: flex;
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--background-dark);
+  padding: 1rem;
+  margin: 1rem;
+  border-bottom: 3px solid transparent;
+  font-size: var(--font-size);
+}
+.links a:hover {
+  border-bottom: 3px solid var(--secound-color);
+  transition: var(--transition);
+}
+.btn {
+  width: 20%;
+  display: none;
+  margin-left: 1rem;
+}
+.icon-bar {
+  display: none;
+}
+.link-icon {
+  display: none;
+}
+/* start nav-bar */
+@media (max-width: 1500px) {
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+  }
+  .logo {
+    display: none;
+  }
+
+  .links {
+    display: none;
+  }
+  .btn {
+    width: 100%;
+
+    display: block;
+    font-size: var(--font-size);
+    margin-bottom: 1rem;
+  }
+  .icon-bar {
+    width: 100%;
+    height: 4rem;
+    background-color:  var(--background-dark);
+  }
+  .icon-bar i {
+    margin-right: 0;
+    padding-left: 19rem;
+    padding-top: 1rem;
+    font-size: 25px;
+    color: white;
+  }
+  .btn:hover {
+    .icon-bar {
+      /* display: none ; */
+      /* visibility: hidden; */
+    }
+    .link-icon {
+      display: block;
+    }
+  }
+  .icon-bar {
+    display: block;
+  }
+  .link-icon {
+    display: none;
+    width: 100%;
+    padding-top: 2rem;
+    color: white;
+    background-color: var(--background-dark);
+  }
+  .link-icon ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-bottom: 4rem; */
+    padding-bottom: 100px;
+    padding-right: 40px;
+  }
+  .link-icon li {
+    padding-bottom: 10px;
+  }
+  .link-icon a {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+  }
+}
+/* end nav-bar */
+
+/* start home page */
+.home {
+  width: 100%;
+  height: 100vh;
+  /* background-color: #0766ad; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.logo {
+  width: 100%;
+  /* padding-bottom: 1rem; */
+  /* margin-bottom: 1rem; */
+  height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #0766ad; */
+  padding-top: 11rem;
+}
+/* .logo img{
+height: 300px;
+} */
+/* Start carousel */
+.owl-carousel {
+  padding-top: 4rem;
+}
+.item-carousel {
+  width: 80%;
+  position: relative;
+  margin-left: 10rem;
+  box-shadow: 1px 10px 20px 1px var(--background-dark);
+}
+
+.item-carousel img {
+  width: 500px;
+  height: 500px;
+}
+.size {
+  width: 1220px;
+}
+.owl-nav {
+  width: 80%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10rem;
+  font-size: 60px;
+  /* background-color: #0766ad; */
+  top: 300px;
+}
+.owl-prev {
+  display: flex;
+  align-items: center;
+}
+.owl-prev span {
+  background-color: #f3f3f34e;
+  width: 40px;
+  padding: 1rem;
+  margin: 5px;
+  border-radius: 40px;
+}
+.owl-next {
+  display: flex;
+  align-items: center;
+}
+.owl-next span {
+  background-color: #f3f3f34e;
+  width: 40px;
+  padding: 1rem;
+  margin: 5px;
+  border-radius: 40px;
+}
+/* ********animation*********** */
+/* Feel free to change duration  */
+.animated {
+  -webkit-animation-duration: 1000 ms;
+  animation-duration: 1000 ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/* .owl-animated-out - only for current item */
+/* This is very important class. Use z-index if you want move Out item above In item */
+.owl-animated-out {
+  z-index: 1;
+}
+/* .owl-animated-in - only for upcoming item
+/* This is very important class. Use z-index if you want move In item above Out item */
+.owl-animated-in {
+  z-index: 0;
+}
+/* .fadeOut is style taken from Animation.css and this is how it looks in owl.carousel.css:  */
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* ********animation*********** */
+
+/* end carousel */
+
+/* ******* start responsive homepage ******* */
+@media (max-width: 1500px) {
+  .logo {
+    /* display: none; */
+    width: 200px;
+    padding-top: 0.8rem;
+  }
+  .logo img{
+    width: 300px;
+  }
+  .item-carousel {
+    /* display: none; */
+    width: 350px;
+    height: 350px;
+    margin-left: 1rem;
+ 
+  }
+  .owl-nav {
+    display: none;
+  }   
+
+
+}
+/* ******* end responsive homepage ******* */
+/* end home page */
+/****** start about page ******/
+.about {
+  width: 100%;
+  height: 100vh;
+}
+/* end about page */
